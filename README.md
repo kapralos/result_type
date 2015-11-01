@@ -12,7 +12,7 @@ A simple and easy-to-use library for Result[Type, Error] in Nim language.
 
 ### Operations
 - `res.value` returns stored value. If `res` actually contains an error, `FieldError` exception will be raised
-- `res.value(defaultValue)` does not raise an exception when `res` is an error, but return provideds `defaultValue` instead
+- `res.value(defaultValue)` does not raise an exception when `res` is an error, but returns provided `defaultValue` instead
 - `res.error` returns stored error. If `res` actually contains a value, `FieldError` exception will be raised
 - `res.map(someProcToMap)`: if `res` is not an error, the provided `proc someProcToMap(param: Type): NewType` will be executed with `res.value` as a parameter and returns `Result[NewType, Error]`; otherwise, it will return `Result[NewType, Error]` containing `res.error`
 - `==` returns `true` if both results contain equal values or equal errors and `false` otherwise
